@@ -66,7 +66,7 @@ Select max(TotalOrderPrice) - min(TotalOrderPrice) as Difference From(
  )
 
  9. Выведите количество заказов у каждого их трех самых молодых сотрудников, а также имя и фамилию во второй колонке.
-  SELECT count(OrderID) as OrderCount, FirstName, LastName FROM [Orders] Join Employees ON Orders.EmployeeID = Employees.EmployeeID
+  SELECT count(OrderID) as OrderCount, FirstName||" "||LastName as EmployeeName FROM [Orders] Join Employees ON Orders.EmployeeID = Employees.EmployeeID
   Group by Orders.EmployeeID
   Order by BirthDate Desc
   limit 3
